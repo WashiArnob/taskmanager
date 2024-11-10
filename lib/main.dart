@@ -1,37 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:taskmanager/screen/onboarding/SplashScreen.dart';
 import 'package:taskmanager/screen/onboarding/emailVerificationScreen.dart';
 import 'package:taskmanager/screen/onboarding/loginScreen.dart';
 import 'package:taskmanager/screen/onboarding/pinVerificationScreen.dart';
 import 'package:taskmanager/screen/onboarding/registrationScreen.dart';
 import 'package:taskmanager/screen/onboarding/setPasswordScreen.dart';
-import 'package:taskmanager/screen/task/newTaskListScreen.dart';
+import 'package:taskmanager/screen/task/homeScreen.dart';
+import 'screen/task/taskCreateScreen.dart';
+import 'utility/utility.dart';
 
-void main() {
-  runApp(const MyApp());
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  String? token= await ReadUserData('id');
+  if(token==null){
+    runApp( MyApp("/login"));
+  }
+  else{
+    runApp( MyApp("/"));
+  }
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-
+  final String FirstRoute;
+  MyApp(this.FirstRoute);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Task Manager',
-      initialRoute: '/',
+      debugShowCheckedModeBanner: false,
+      title: "Task Manager",
+      initialRoute: FirstRoute,
       routes: {
-        '/': (context)=> splashScreen(),
-        '/login': (context)=> loginScreen(),
-        '/registration': (context)=> registrationScreen(),
-        '/emailVerification': (context)=> emailVerificationScreen(),
-        '/pinVerification': (context)=> pinVerificationScreen(),
-        '/setPassword': (context)=> setPasswordScreen(),
-        '/newTaskList': (context)=> newTaskListScreen(),
-
-
+        '/':(context)=> homeScreen(),
+        '/login':(context)=> loginScreen(),
+        '/registration':(context)=> registrationScreen(),
+        '/emailVerification':(context)=> emailVerificationScreen(),
+        '/pinVerification':(context)=> pinVerificationScreen(),
+        '/setPassword':(context)=> setPasswordScreen(),
+        '/taskCreate':(context)=> taskCreateScreen()
       },
     );
   }
 }
-
