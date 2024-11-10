@@ -15,12 +15,12 @@ Future<void> WriteUserData(UserData) async {
 
 Future<void> WriteEmailVerification(Email) async {
   final prefs = await SharedPreferences.getInstance();
-  await prefs.setString('EmailVerification', Email);
+  await prefs.setString('data', Email);
 }
 
 Future<void> WriteOTPVerification(OTP) async {
   final prefs = await SharedPreferences.getInstance();
-  await prefs.setString('OTPVerification', OTP);
+  await prefs.setString('data', OTP);
 }
 
 Future<String?> ReadUserData(Key) async {
