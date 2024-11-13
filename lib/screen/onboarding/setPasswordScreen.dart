@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../api/apiClient.dart';
+import 'package:taskmanager/api/apiClient.dart';
 import 'package:taskmanager/style/style.dart';
-import '../../utility/utility.dart';
+import 'package:taskmanager/utility/utility.dart';
 
 class setPasswordScreen extends StatefulWidget {
 

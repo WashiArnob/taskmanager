@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import '../../api/apiClient.dart';
+import 'package:taskmanager/api/apiClient.dart';
 import 'package:taskmanager/style/style.dart';
-import '../../utility/utility.dart';
+import 'package:taskmanager/utility/utility.dart';
 
 class pinVerificationScreen extends StatefulWidget {
   const pinVerificationScreen({Key? key}) : super(key: key);

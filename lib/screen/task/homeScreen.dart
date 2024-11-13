@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:taskmanager/component/cancelTaskList.dart';
-import '../../component/TaskAppBar.dart';
-import '../../component/completedTaskList.dart';
-import '../../component/newTaskList.dart';
-import '../../component/appBottomNav.dart';
-import '../../component/progressTaskList.dart';
-import '../../utility/utility.dart';
+import 'package:taskmanager/component/TaskAppBar.dart';
+import 'package:taskmanager/component/completedTaskList.dart';
+import 'package:taskmanager/component/newTaskList.dart';
+import 'package:taskmanager/component/appBottomNav.dart';
+import 'package:taskmanager/component/progressTaskList.dart';
+import 'package:taskmanager/utility/utility.dart';
 
 
 class homeScreen extends StatefulWidget {

@@ -16,7 +16,7 @@ main() async {
   }
   else{
     runApp( MyApp("/"));
-  }
+  } 
 }
 
 class MyApp extends StatelessWidget {

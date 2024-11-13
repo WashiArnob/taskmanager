@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../api/apiClient.dart';
+import 'package:taskmanager/api/apiClient.dart';
 import 'package:taskmanager/style/style.dart';
 
 class loginScreen extends StatefulWidget {
