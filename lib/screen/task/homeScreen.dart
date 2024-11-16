@@ -26,7 +26,7 @@ class _homeScreenState extends State<homeScreen> {
   }
 
   final widgetOptions=[
-    newTaskList(),
+    NewTaskList(),
     progressTaskList(),
     completedTaskList(),
     cancelTaskList()

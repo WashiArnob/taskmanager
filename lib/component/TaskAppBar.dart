@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taskmanager/style/style.dart';
 import 'package:taskmanager/utility/utility.dart';
+import 'package:get/get.dart';
 
 AppBar TaskAppBar(context,ProfileData){
   return AppBar(
@@ -31,14 +32,17 @@ AppBar TaskAppBar(context,ProfileData){
     actions: [
       IconButton(
           onPressed: (){
-            Navigator.pushNamed(context, "/taskCreate");
+            //Navigator.pushNamed(context, "/taskCreate");
+            Get.toNamed("/taskCreate");
+
           },
           icon: Icon(Icons.add_circle_outline)
       ),
       IconButton(
           onPressed: () async {
             await RemoveToken();
-            Navigator.pushNamedAndRemoveUntil(context, "/login", (route) => false);
+            //Navigator.pushNamedAndRemoveUntil(context, "/login", (route) => false);
+            Get.offAllNamed("/login");
 
           },
           icon: Icon(Icons.output)

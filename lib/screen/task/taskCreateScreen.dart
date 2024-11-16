@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taskmanager/Style/Style.dart';
 import 'package:taskmanager/api/apiClient.dart';
+import 'package:get/get.dart';
 
 class taskCreateScreen extends StatefulWidget {
   const taskCreateScreen({Key? key}) : super(key: key);
@@ -31,7 +32,8 @@ class _taskCreateScreenState extends State<taskCreateScreen> {
       setState(() {Loading=true;});
       bool res=await TaskCreateRequest(FormValues);
       if(res==true){
-        Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+        //Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+        Get.offAllNamed('/');
       }
       else{
         setState(() {Loading=false;});

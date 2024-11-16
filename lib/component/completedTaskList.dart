@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:taskmanager/Style/Style.dart';
 import 'package:taskmanager/api/apiClient.dart';
@@ -45,7 +46,8 @@ class _completedTaskListState extends State<completedTaskList> {
                 await CallData();
               }, child: Text('Yes')),
               OutlinedButton(onPressed: (){
-                Navigator.pop(context);
+                //Navigator.pop(context);
+                Get.back();
               }, child: Text('No')),
             ],
           );

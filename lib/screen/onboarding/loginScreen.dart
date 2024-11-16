@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:taskmanager/api/apiClient.dart';
 import 'package:taskmanager/style/style.dart';
 
@@ -30,7 +31,8 @@ class _loginScreenState extends State<loginScreen> {
       setState(() {Loading=true;});
       bool res=await LoginRequest(FormValues);
       if(res==true){
-        Navigator.pushNamedAndRemoveUntil(context, "/newTaskList", (route) => false);
+        //Navigator.pushNamedAndRemoveUntil(context, "/newTaskList", (route) => false);
+        Get.offAllNamed("/newTaskList");
       }
       else{
         setState(() {Loading=false;});
@@ -94,7 +96,9 @@ class _loginScreenState extends State<loginScreen> {
                         SizedBox(height: 20),
                         InkWell(
                             onTap: (){
-                              Navigator.pushNamed(context, "/emailVerification");
+                              //Navigator.pushNamed(context, "/emailVerification");
+                              Get.toNamed("/emailVerification");
+
                             },
                             child: Text('Forget Password?',style: Head7Text(colorLightGray),
                             )
@@ -104,7 +108,9 @@ class _loginScreenState extends State<loginScreen> {
 
                         InkWell(
                             onTap: (){
-                              Navigator.pushNamed(context, "/registration");
+                              //Navigator.pushNamed(context, "/registration");
+                              Get.toNamed("/registration");
+
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:taskmanager/Style/Style.dart';
 import 'package:taskmanager/api/apiClient.dart';
 import 'TaskList.dart';
@@ -45,13 +46,15 @@ class _cancelTaskListState extends State<cancelTaskList> {
             content: Text("Onece delete, you can't get it back"),
             actions: [
               OutlinedButton(onPressed: () async {
-                Navigator.pop(context);
+                //Navigator.pop(context);
+                Get.back();
                 setState(() {Loading=true;});
                 await TaskDeleteRequest(id);
                 await CallData();
               }, child: Text('Yes')),
               OutlinedButton(onPressed: (){
-                Navigator.pop(context);
+                //Navigator.pop(context);
+                Get.back();
               }, child: Text('No')),
             ],
           );
@@ -102,7 +105,8 @@ class _cancelTaskListState extends State<cancelTaskList> {
                         style: AppButtonStyle(),
                         child: SuccessButtonChild('Confirm'),
                         onPressed: (){
-                          Navigator.pop(context);
+                          //Navigator.pop(context);
+                          Get.back();
                           UpdateStatus(id);
                         },
                       ),
