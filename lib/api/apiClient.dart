@@ -56,7 +56,7 @@ Future<bool> VerifyEmailRequest(Email) async{
 }
 
 Future<bool> VerifyOTPRequest(Email,OTP) async{
-  var URL=Uri.parse("${BaseURL}/RecoverVerifyOTP/${Email}/${OTP}");
+  var URL=Uri.parse("${BaseURL}/RecoverVerifyOtp/${Email}/${OTP}");
   var response= await  http.get(URL,headers:RequestHeader);
   var ResultCode=response.statusCode;
   var ResultBody=json.decode(response.body);
@@ -73,7 +73,7 @@ Future<bool> VerifyOTPRequest(Email,OTP) async{
 
 Future<bool> SetPasswordRequest(FormValues) async{
 
-  var URL=Uri.parse("${BaseURL}/RecoverResetPass");
+  var URL=Uri.parse("${BaseURL}/RecoverResetPassword");
   var PostBody=json.encode(FormValues);
 
   var response= await  http.post(URL,headers:RequestHeader,body: PostBody);
