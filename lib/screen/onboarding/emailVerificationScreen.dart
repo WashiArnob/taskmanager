@@ -25,7 +25,7 @@ class _emailVerificationScreenState extends State<emailVerificationScreen> {
     }
     else{
       setState((){Loading=true;});
-      bool res=await VerifyEmailRequest(FormValues['email']);
+      bool res=await VerifyEmailRequest(FormValues['email']!);
       if(res==true){
         Navigator.pushNamed(context, "/pinVerification");
       }

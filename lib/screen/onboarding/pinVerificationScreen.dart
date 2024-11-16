@@ -28,7 +28,7 @@ class _pinVerificationScreenState extends State<pinVerificationScreen> {
     else{
       setState(() {Loading=true;});
       String? emailAddress=await ReadUserData('EmailVerification');
-      bool res=await VerifyOTPRequest(emailAddress,FormValues['otp']);
+      bool res=await VerifyOTPRequest(emailAddress!,FormValues['otp']!);
       if(res==true){
         Navigator.pushNamed(context, "/setPassword");
       }
